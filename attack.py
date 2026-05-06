@@ -1,4 +1,4 @@
-# attack
+# attack.py
 
 import os
 import math
@@ -14,10 +14,7 @@ import torch.nn.functional as F
 from torchvision import transforms
 from transformers import CLIPModel, CLIPImageProcessor
 
-
-# ============================================================
-# 1. Configuration (CLI-based, NOT Kaggle-specific)
-# ============================================================
+# ===================== 1. Configuration (CLI-based, NOT Kaggle-specific) =====================
 
 class Config:
     def __init__(self, args):
@@ -48,10 +45,7 @@ class Config:
         self.mask_gamma = 2.0
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
-
-# ============================================================
-# 2. Ensemble CLIP Extractor
-# ============================================================
+# ===================== 2. Ensemble CLIP Extractor =====================
 
 class EnsembleCLIPExtractor(nn.Module):
     def __init__(self, model_paths, device):
@@ -100,10 +94,7 @@ class EnsembleCLIPExtractor(nn.Module):
 
         return torch.stack(feats).mean(dim=0)
 
-
-# ============================================================
-# 3. Crop sampling (M-Attack + semantic extension)
-# ============================================================
+# ===================== 3. Crop sampling (M-Attack + semantic extension) =====================
 
 def sample_crop_box(H, W, mask):
 
@@ -135,10 +126,7 @@ def crop_and_resize(x, box, size):
 
     return F.interpolate(x, size=size, mode="bilinear", align_corners=False)
 
-
-# ============================================================
-# 4. Attack
-# ============================================================
+# ===================== 4. Attack =====================
 
 def attack_sample(src_path, tgt_path, mask_path, extractor, cfg):
 
@@ -216,10 +204,7 @@ def attack_sample(src_path, tgt_path, mask_path, extractor, cfg):
 
     return x_adv
 
-
-# ============================================================
-# 5. Main
-# ============================================================
+# ===================== 5. Main =====================
 
 def main():
 
