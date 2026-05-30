@@ -1,4 +1,3 @@
-# SAMCA-Semantic-aware-mask-guided-multi-crop-attack-against-large-vision-language-model
 # SAMCA: Semantic-Aware Mask-Guided Multi-Crop Attack against Large Vision-Language Models
 
 ## Overview
@@ -15,15 +14,6 @@ To overcome this issue, SAMCA introduces semantic priors generated from DINOv2 a
 2. Mask-guided importance sampling for crop selection.
 3. Spatially adaptive mask-modulated PGD optimization.
 4. Improved black-box transferability against commercial LVLMs.
-
-## Repository Structure
-
-SAMCA/
-│
-├── generate_mask_npy.py
-├── attack_generate_adversarial_images.py
-├── requirements.txt
-└── README.md
 
 ### File Description
 
