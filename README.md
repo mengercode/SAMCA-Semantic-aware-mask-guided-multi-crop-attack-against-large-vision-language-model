@@ -119,7 +119,7 @@ python attack_generate_adversarial_images.py \
     --out_dir data/adversarial \
     --resolution 336 \
     --steps 300 \
-    --k_crops 4
+    --k_crops 1
 ```
 
 Generated adversarial images will be saved to:
