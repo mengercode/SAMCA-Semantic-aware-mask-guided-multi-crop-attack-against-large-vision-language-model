@@ -85,7 +85,7 @@ Organize the dataset as follows:
 
 ```text
 data/
-├── images/
+├── source_images/
 ├── targets/
 └── masks/
 ```
@@ -96,7 +96,7 @@ data/
 
 ```bash
 python generate_mask_npy.py \
-    --image_dir data/images \
+    --image_dir data/source_images \
     --hf_dir ./dinov2-large \
     --out_dir data/masks \
     --sparsity 0.5 \
@@ -113,7 +113,7 @@ Generated masks will be stored as `.npy` files.
 
 ```bash
 python attack_generate_adversarial_images.py \
-    --src_dir data/images \
+    --src_dir data/source_images \
     --tgt_dir data/targets \
     --mask_dir data/masks \
     --out_dir data/adversarial \
