@@ -25,13 +25,12 @@ To overcome this issue, SAMCA introduces semantic priors generated from DINOv2 a
 
 ## Dataset
 
-Experiments are conducted on the NIPS 2017 Adversarial Learning Development Dataset.
+All experiments were conducted using the NIPS-2017 Adversarial Learning Development Set, which is publicly available through Kaggle:
 
-Dataset Source:
+https://www.kaggle.com/datasets/google-brain/nips-2017-adversarial-learning-development-set
 
-https://www.kaggle.com/competitions/nips-2017-defense-against-adversarial-attacks/data
+Example images reproduced in the manuscript are derived from this benchmark dataset and are included solely for academic research illustration purposes.
 
-The dataset is not redistributed in this repository. Users should download it from the official source and comply with the original license terms.
 
 ## Requirements
 
