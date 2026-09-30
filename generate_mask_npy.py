@@ -132,7 +132,7 @@ def main():
     ap.add_argument("--out_dir", required=True)
 
     ap.add_argument("--sparsity", type=float, default=0.5,
-                    help="Foreground ratio (quantile threshold)")
+                    help="Quantile threshold S for mask binarization. Smaller S yields higher mask coverage.")
 
     ap.add_argument("--beta_floor", type=float, default=0.05,
                     help="Background retention factor")
