@@ -32,7 +32,7 @@ class Config:
         self.input_res = args.resolution
 
         self.k_crops      = args.k_crops
-        self.crop_scale   = (0.5, 0.9)
+        self.crop_scale   = (0.4, 0.8)
         self.crop_aspect  = (0.75, 1.33)
 
         self.mask_gamma = 2.0
@@ -79,7 +79,7 @@ class EnsembleCLIPExtractor(nn.Module):
 
 def sample_crop_box(H, W, mask):
     
-    s  = random.uniform(0.5, 0.9)
+    s  = random.uniform(0.4, 0.8)
     ar = random.uniform(0.75, 1.33)
 
     crop_h = min(H, max(1, int(H * s / math.sqrt(ar))))
